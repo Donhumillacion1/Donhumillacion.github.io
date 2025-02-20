@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+
+        <div class="logo">Menu</div>
+        <input type="checkbox" id="toggle">
+        <label for="toggle"><img class="Menu" src="menu.svg" alt="Menu"></label>
+
+        <nav class="navigation">
+            <ul class="navigation">
+
+                <li><a href="#introduccion">Introducción</a></li>
+                <li><a href="#">Subtemas</a>
+
+                    <ul>
+                        <li><a href="#caracteristicas">caracteristicas</a></li>
+                        <li><a href="#importancia">Importancia</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#juego">Juego de ofimática</a>
+                    
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+    <div class="Banner">
+        <div class="capa"></div>
+        <div class="info">
+            <h1>Introduccion a la Ofimática</h1>
+            <p>La ofimática se refiere al conjunto de técnicas, aplicaciones
+                 y herramientas informáticas que se utilizan en las labores de 
+                 oficina para mejorar la productividad.</p>
+                 <a href="https://www.youtube.com/watch?v=rsT5isPjgbI" target="_blank">Leer mas</a>
+        </div>
+    </div>
+    <div class="content">
+        <section id="caracteristicas">
+            <h2>Características de la Ofimática</h2>
+            <p>Las principales características de la ofimática incluyen la automatización de tareas, la facilidad de acceso a la información, la integración de diversas aplicaciones y la capacidad de trabajar de manera colaborativa y remota.</p>
+            <br>
+        </section>
+        <section id="utilidad">
+            <h2>Utilidad de la Ofimática</h2>
+            <p>La ofimática es útil en la creación y gestión de documentos, la elaboración de presentaciones, el análisis de datos y la organización de información. Facilita el flujo de trabajo y mejora la eficiencia en el entorno de oficina.</p>
+            <br>
+        </section>
+        <section id="importancia">
+            <h2>Importancia de la Ofimática en la Vida</h2>
+            <p>En la vida moderna, la ofimática es fundamental. Permite a las empresas y organizaciones optimizar sus procesos, reducir costos y mejorar la comunicación interna y externa. A nivel personal, las habilidades ofimáticas son esenciales para la mayoría de los trabajos y contribuyen al desarrollo profesional.</p>
+            <br>
+        </section>
+    </div>
+    <div class="content1">
+        <section id="juego" class="game">
+            <h2>Juego de Ofimática</h2>
+            <p>Escribe el nombre del elemento de programación al leer la descripción:</p>
+            <p id="description">Un programa que permite crear documentos de texto.</p>
+            <input type="text" id="answer" placeholder="Tu respuesta aquí">
+            <button onclick="checkAnswer()">Comprobar respuesta</button>
+            <p id="feedback"></p>
+        </section>
+    </div>
+
+    <script>
+        const descriptions = [
+            { desc: "Un programa que permite crear documentos de texto.", answer: "Procesador de texto" },
+            { desc: "Un programa que permite realizar cálculos y gestionar datos en tablas.", answer: "Hoja de cálculo" },
+            { desc: "Un programa que permite crear presentaciones con diapositivas.", answer: "Software de presentación" },
+            { desc: "Un programa que permite gestionar grandes cantidades de datos organizados.", answer: "Gestor de bases de datos" }
+        ];
+
+        function checkAnswer() {
+            const userAnswer = document.getElementById("answer").value;
+            const currentDesc = document.getElementById("description").textContent;
+            const correctAnswer = descriptions.find(item => item.desc === currentDesc).answer;
+            const feedback = document.getElementById("feedback");
+
+            if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+                feedback.textContent = "¡Correcto!";
+            } else {
+                feedback.textContent = "Incorrecto. Inténtalo de nuevo.";
+            }
+        }
+    </script>
+
+</body>
+</html>
